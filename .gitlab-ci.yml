@@ -1,0 +1,20 @@
+image: tmaier/docker-compose:19.03
+
+services:
+  - docker:dind
+
+stages:
+  - build
+
+before_script:
+  - apk add --no-cache bash make curl
+  - docker info
+  - docker-compose --version
+
+build:
+  stage: build
+  except:
+  - master
+  script:
+    - make
+    - make test

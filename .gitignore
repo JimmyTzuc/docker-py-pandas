@@ -1,0 +1,6 @@
+*node_modules
+web/dist/*
+web/yarn-error.log
+*schema.pdf
+*schema.mdj
+__pycache__/
